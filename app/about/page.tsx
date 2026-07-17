@@ -1,0 +1,8 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+
+export const metadata: Metadata = { title: "About" };
+
+export default function AboutPage() {
+  return <main className="inner-page"><section className="about-hero"><div><p className="eyebrow">Our story</p><h1>Made to carry culture forward.</h1><p>Jebena is a design-led home for Ethiopian coffee objects: respectful of ceremony, useful in modern homes, and connected to the hands that shape them.</p></div><div className="about-image"><Image src="/images/story.jpg" alt="Ethiopian coffee cup in warm light" fill priority sizes="(max-width: 800px) 94vw, 52vw" /></div></section><section className="values-grid"><article><span>01</span><h2>Tradition is living.</h2><p>We treat heritage as something practiced, shared, and allowed to keep evolving.</p></article><article><span>02</span><h2>Hands leave meaning.</h2><p>Small variations are evidence of a maker—not imperfections to be erased.</p></article><article><span>03</span><h2>Design should serve ritual.</h2><p>Every proportion, texture, and finish begins with how the object will be used.</p></article></section><section className="about-stories"><p className="eyebrow">Ceremony notes</p><div><article><span>Gathering</span><h2>The first pour is an invitation.</h2><p>Coffee begins before the cup is filled. It begins when space is made for another person.</p></article><article><span>Craft</span><h2>Shaped slowly, finished by hand.</h2><p>The curve, texture, and slight variation of each piece are evidence of its maker.</p></article><article><span>Memory</span><h2>Pattern carries a signature.</h2><p>Color and geometry connect everyday objects to families, regions, and living traditions.</p></article></div></section></main>;
+}
