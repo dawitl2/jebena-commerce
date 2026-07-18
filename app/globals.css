@@ -187,6 +187,9 @@ h1, h2 { font-family: var(--font-cormorant), Georgia, serif; }
 .payment-methods { display: grid; gap: 11px; }
 .payment-methods > button { min-height: 82px; padding: 17px 18px; display: grid; grid-template-columns: 1fr auto; align-items: center; text-align: left; background: #fff; border: 1px solid var(--line); border-radius: 16px; cursor: pointer; transition: transform .2s ease,border-color .2s ease,box-shadow .2s ease; }
 .payment-methods > button:hover { transform: translateY(-2px); border-color: rgba(159,100,46,.42); box-shadow: 0 12px 25px rgba(62,38,20,.08); }
+.payment-methods > button:disabled { cursor: not-allowed; opacity: .62; transform: none; box-shadow: none; }
+.payment-methods > .payment-coming-soon { background: #f3eee7; }
+.payment-methods > .payment-coming-soon > span:last-child { grid-column: 2; grid-row: 1 / 3; padding: 7px 9px; color: var(--muted); background: #e7ddd1; border-radius: 99px; font-size: 7px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
 .payment-methods > button > span { display: flex; align-items: center; gap: 9px; font-size: 17px; font-weight: 800; }
 .payment-methods > button > small { grid-column: 1; margin-top: 5px; color: var(--muted); font-size: 8.5px; }
 .payment-methods > button > svg { grid-column: 2; grid-row: 1 / 3; color: var(--clay); }
@@ -196,11 +199,20 @@ h1, h2 { font-family: var(--font-cormorant), Georgia, serif; }
 .checkout-form label { margin-top: 14px; display: grid; gap: 7px; color: #4d4842; font-size: 9px; font-weight: 750; }
 .checkout-form input { height: 48px; padding: 0 15px; background: #fff; border: 1px solid var(--line); border-radius: 12px; outline: 0; font-size: 10px; }
 .checkout-form input:focus { border-color: rgba(159,100,46,.6); box-shadow: 0 0 0 3px rgba(159,100,46,.08); }
+.checkout-error { margin-top: 16px; padding: 12px 14px; display: flex; align-items: flex-start; gap: 8px; color: #8d3d2e; background: rgba(166,73,53,.08); border: 1px solid rgba(166,73,53,.15); border-radius: 12px; font-size: 9px; line-height: 1.55; }
+.checkout-error svg { flex: 0 0 auto; width: 15px; height: 15px; }
 .checkout-submit,.checkout-complete button { min-height: 50px; margin-top: 22px; display: flex; align-items: center; justify-content: center; gap: 8px; color: #fff; background: var(--coffee); border: 0; border-radius: 99px; font-size: 10px; font-weight: 750; cursor: pointer; }
 .checkout-form > small { margin-top: 12px; color: var(--muted); font-size: 8px; text-align: center; }
 .checkout-complete { text-align: center; }
 .checkout-complete > svg { width: 58px; height: 58px; margin: 0 auto 22px; color: #38936e; }
 .checkout-complete button { width: 190px; margin-inline: auto; }
+.checkout-complete > small { display: block; color: var(--muted); font-size: 8px; }
+.checkout-loading,.checkout-failed { text-align: center; }
+.checkout-loading > svg,.checkout-failed > svg { width: 54px; height: 54px; margin: 0 auto 22px; }
+.checkout-loading > svg { color: var(--clay); animation: checkout-spin 1s linear infinite; }
+.checkout-failed > svg { color: #a44936; }
+.checkout-failed button { min-height: 48px; margin: 21px auto 0; padding: 0 20px; color: #fff; background: var(--coffee); border: 0; border-radius: 99px; font-size: 9px; font-weight: 750; cursor: pointer; }
+@keyframes checkout-spin { to { transform: rotate(360deg); } }
 
 /* Account and search */
 .account-panel { min-height: 650px; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; background: rgba(255,255,255,.58); border: 1px solid rgba(255,255,255,.9); border-radius: 24px; box-shadow: var(--shadow); }.account-art { padding: 70px 58px; color: #fff; background: radial-gradient(circle at 70% 25%,rgba(201,142,81,.32),transparent 30%), linear-gradient(145deg,#2e1e16,#704421); }.account-art .eyebrow { color: #dca776; }.account-art h1 { font-size: clamp(48px,5vw,68px); }.account-art > p:last-child { max-width: 420px; color: rgba(255,255,255,.65); font-size: 11px; line-height: 1.8; }.account-form-wrap { padding: 65px 70px; }.account-tabs { padding: 4px; display: grid; grid-template-columns: 1fr 1fr; background: #eee5da; border-radius: 99px; }.account-tabs button { min-height: 40px; display: flex; align-items: center; justify-content: center; gap: 6px; background: transparent; border: 0; border-radius: 99px; font-size: 9px; font-weight: 700; cursor: pointer; }.account-tabs button.active { background: #fff; box-shadow: 0 5px 16px rgba(65,40,22,.08); }.account-form-wrap form { margin-top: 40px; }.account-form-wrap form h2 { margin: 0; font-size: 39px; }.account-form-wrap form > p { color: var(--muted); font-size: 9.5px; }.account-form-wrap label { margin-top: 18px; display: grid; gap: 7px; font-size: 9px; font-weight: 700; }.account-form-wrap input { height: 46px; padding: 0 14px; background: #fff; border: 1px solid var(--line); border-radius: 12px; outline: 0; font-size: 10px; }.account-form-wrap .dark-button { width: 100%; margin-top: 22px; }.account-success { max-width: 600px; margin: 100px auto; text-align: center; }.account-success > svg { width: 54px; height: 54px; color: var(--clay); }.account-success h1 { margin: 0; font-size: 60px; }.account-success > p:last-of-type { color: var(--muted); font-size: 11px; }.account-success button { margin-top: 16px; padding: 12px 18px; color: #fff; background: var(--coffee); border: 0; border-radius: 99px; cursor: pointer; }
