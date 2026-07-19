@@ -2,9 +2,17 @@
 
 Jebena is a responsive Ethiopian coffee-culture storefront for handcrafted ceremony pieces. It includes mock product, search, filtering, customization, cart, and checkout experiences.
 
+## Vercel deployment
+
+[View the Jebena storefront on Vercel](https://jebena-dawits-projects-b5dc96b5.vercel.app/)
+
+The Vercel deployment is a storefront demonstration. Chapa checkout is intentionally not configured there because completing a payment requires a private server-side secret, and no payment secret is published with the site. To test the Chapa Test Mode flow, follow the local setup instructions below.
+
+Vercel Authentication is currently enabled for the project, so visitors may be asked to sign in until the project owner disables **Deployment Protection → Vercel Authentication** in the Vercel project settings.
+
 ## Current payment status
 
-- Chapa is connected in **Test Mode**. The app initializes checkout on Chapa and verifies the returned transaction through local server routes. No real money is collected.
+- Chapa is connected in **Test Mode when running locally**. The app initializes checkout on Chapa and verifies the returned transaction through local server routes. No real money is collected.
 - PayPal remains visible as **Coming soon** and is not connected yet.
 - There is no database, user account system, or storage of customer payment details.
 
